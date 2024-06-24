@@ -61,7 +61,8 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
 ## 2일차
 - 파이썬 가상환경 생성
     - env 라는 폴더에 가상환경 생성
-        - python -m venv env
+        - python -m venv (--system-site-packages)env
+        - 괄호: 운영체제가 가진 라이브러리를 포함하는 옵션
     - 가상환경 접속
         - source ./env/bin/activate 
     - 가상환경 종료
@@ -84,8 +85,40 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
 ## 3일차
 - 릴레이(Relay) 모듈: 라즈베리/아두이노에서 제공하는 전력만으로 구동할 수 없는 외부기기를 컨트롤하고 싶을 때 외부 전원을 릴레이와 연결하여 조건이 만족할 때 아두이노에서 신호를 보내 컨트롤
 
-- 코일에 전류가 흐르면 자성이 생겨 (=전자석) NO의 접점이 닫히고, NC의 접점이 열리게 된다
+    [!image](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img01.png)
+    - 5VDC -> 5V 직류구동
+    - 10A 250VAC -> 10A 250V 교류 연결 가능
+
     - NC: Nomal Close (접점이 닫혀져있음)
     - NO: Nomal Open (접점이 열려있음)
     - COM: 공통단자
 
+    - VCC(+),GND(-),IN(Singnal) -> 릴레이(전자석)을 구동하기 위한 전력 단자 및 신호 단자
+    
+    [!image](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img02.png)
+    - 코일에 전류가 흐르면 자성이 생겨 (=전자석) NO의 접점이 닫히고, NC의 접점이 열리게 된다
+
+    - 릴레이에 전류가 흐를 때 어떤 부품을 동작 or 전류 인가 => NO연결
+    - 평상시 부품에 전류를 계속 인가하고 릴레이에 전류가 흐를 때 차단 => NO 연결
+
+- 스텝모터 모듈 / 모터 드라이버
+    - 스텝모터가 돌아가는 반복문 알고리즘 작성
+
+- Flask 활용 웹서버 가동
+    ```python
+    app.run(host="0.0.0.0", port="10111", debug=True)
+    ## host: 외부 아이피에서 접속하도록 설정
+    ## port: 포트번호 지정 (생략가능)
+    ## debug=True: 수정된 코드를 실시간으로 서버에 반영
+    ```
+
+    - (ds19)웹을 통해 LED on/off 제어하기
+    - get 형태로 파라미터(인자값) 받기
+    
+    ```python
+    (flask.)request.args.get('text')
+    # text라는 Key의 Value 값 가져오기
+    # URL:port/?text=boom!! 형태의 주소를 입력하면
+    # boom!!이 가져와짐
+    ```
+    
