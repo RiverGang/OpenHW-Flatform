@@ -33,8 +33,6 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
     time.sleep(secs)
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e1e49949-7674-4cfb-90f5-017aceee7918/964ee39b-140d-4381-a838-f520572027a7/Untitled.png)
-    
 - 핀은 레지스터와 연결되어 있고,  HIGH(= Vcc, 5V) or LOW(= Gnd, 0V)의 비트 값 저장
 - 전기 공급 → 전류 흐름 → 동작
 
@@ -131,7 +129,7 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
 - 7-세그먼트 모듈 사용해 0~9초 카운트다운
     
     ![7-세그먼트](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img03.png)
-    
+
     - 공통 양극(Common Anode)방식: 공통 단자(COM1,2,3,4)에 (+)신호, 데이터 신호(a~g, dp) (-)마이너스 => LED ON
     <->
     - 공통 음극(Common Cathod)방식: 공통 단자 (-), 데이터 신호 (+)
