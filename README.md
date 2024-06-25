@@ -85,7 +85,7 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
 ## 3일차
 - 릴레이(Relay) 모듈: 라즈베리/아두이노에서 제공하는 전력만으로 구동할 수 없는 외부기기를 컨트롤하고 싶을 때 외부 전원을 릴레이와 연결하여 조건이 만족할 때 아두이노에서 신호를 보내 컨트롤
 
-    [!image](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img01.png)
+    ![릴레이모듈](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img01.png)
     - 5VDC -> 5V 직류구동
     - 10A 250VAC -> 10A 250V 교류 연결 가능
 
@@ -95,7 +95,7 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
 
     - VCC(+),GND(-),IN(Singnal) -> 릴레이(전자석)을 구동하기 위한 전력 단자 및 신호 단자
     
-    [!image](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img02.png)
+    ![전자석원리](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img02.png)
     - 코일에 전류가 흐르면 자성이 생겨 (=전자석) NO의 접점이 닫히고, NC의 접점이 열리게 된다
 
     - 릴레이에 전류가 흐를 때 어떤 부품을 동작 or 전류 인가 => NO연결
@@ -121,4 +121,19 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
     # URL:port/?text=boom!! 형태의 주소를 입력하면
     # boom!!이 가져와짐
     ```
+
+## 4일차
+- RPi 스위치로 카메라모듈 동작 및 이미지 파일로 저장
+    ```python
+    from picamera2 import Picamera2
+    # picamera2 라이브러리의 Picamera2 클래스
+    ```
+- 7-세그먼트 모듈 사용해 0~9초 카운트다운
     
+    ![7-세그먼트](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img03.png)
+    
+    - 공통 양극(Common Anode)방식: 공통 단자(COM1,2,3,4)에 (+)신호, 데이터 신호(a~g, dp) (-)마이너스 => LED ON
+    <->
+    - 공통 음극(Common Cathod)방식: 공통 단자 (-), 데이터 신호 (+)
+
+ 
