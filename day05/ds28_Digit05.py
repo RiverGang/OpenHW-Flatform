@@ -2,8 +2,8 @@
 import RPi.GPIO as GPIO
 import time
 
-segPins = [20,21,12,23,24,25,26]
-COM = [4, 5, 6, 13]
+segPins = [5,6,13,19,26,16,20]
+COM = [17,27,22,4]
 GPIO.setmode(GPIO.BCM)
 
 for pin in segPins:

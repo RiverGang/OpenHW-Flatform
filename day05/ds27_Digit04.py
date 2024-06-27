@@ -2,9 +2,9 @@
 import RPi.GPIO as GPIO
 import time
 
-segPins = [20,21,12,23,24,25,26]
-COM = [4, 5, 6, 13]
 GPIO.setmode(GPIO.BCM)
+segPins = [5,6,13,19,26,16,20]
+COM = [17,27,22,4]
 
 for pin in segPins:
 	GPIO.setup(pin, GPIO.OUT)
@@ -12,6 +12,7 @@ for pin in segPins:
 
 for com in COM:
 	GPIO.setup(com, GPIO.OUT)
+	GPIO.output(com, False)
 
 seqs = [
  [0,0,0,0,0,0,1],  # 0
@@ -46,3 +47,5 @@ try:
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
+
+
