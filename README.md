@@ -46,7 +46,7 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
         - 전류 법칙
     - 플로팅 상태
 
-    - 스위치
+    - 스위치 (**플로팅현상때문에 반드시 풀업or풀다운 형태로 연결**)
         - 풀업저항 (저항이 VCC 쪽에 연결)
             - 스위치를 누르지 않으면 VCC 값(= 1)이 그대로 레지스터(=입력)에 들어감
         - 풀다운 저항 (저항이 GND 쪽에 연결)
@@ -126,12 +126,33 @@ IoT 개발자 오픈하드웨어 플랫폼 학습
     from picamera2 import Picamera2
     # picamera2 라이브러리의 Picamera2 클래스
     ```
-- 7-세그먼트 모듈 사용해 0~9초 카운트다운
-    
+- 7-세그먼트 모듈 사용
+
     ![7-세그먼트](https://raw.githubusercontent.com/RiverGang/OpenHW-Flatform/main/images/img03.png)
 
     - 공통 양극(Common Anode)방식: 공통 단자(COM1,2,3,4)에 (+)신호, 데이터 신호(a~g, dp) (-)마이너스 => LED ON
     <->
     - 공통 음극(Common Cathod)방식: 공통 단자 (-), 데이터 신호 (+)
-
+    
+    - 0~9까지 1초마다 숫자 점등하기
+    - 버튼을 클릭할 때마다 0~9 카운트하기
  
+ ## 5일차
+ - 4 Digit 7-세그먼트 모듈
+    - 각 COM 단자가 차례로 하나씩 빠르게 ON/OFF되면 그 잔상이 동시에 표기된 것처럼 보이게 됨
+    - COM 입력 단자 별 저항연결
+        - (ds26) 1234 동시에 표시
+        - (ds27) 키보드 입력 값을 화면에 표시하기
+        - (ds28) 1~9999까지 숫자 카운트
+
+## 6일차
+- PyQt5 설치 (pip install PyQt5)
+- vncserver 바탕화면에 PyQt5 설치
+    - vncserver-virtual (putty에서 vnc서버 열기)
+    - sudo apt install qttools5-dev-tools
+
+- Qt Designer
+    - GUI 레이아웃 구성
+    - PyQt5 라이브러리 이용 -> 이벤트와 함수 설정
+        - Qt Designer에서 Edit Signal/Slots을 이용해 이벤트와 함수 연결 시 Python에서 클래스 생성자 내에 이벤트핸들러 연결하지 않아도 됨, 함수만 정의
+    
