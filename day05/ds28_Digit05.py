@@ -26,17 +26,28 @@ seqs = [
  [0,0,0,0,1,0,0]  # 9
 ]
 
+def display_number(number):
+	number_str = str(number)
+	length = len(number_str)
+	size = 4 - length
+	for x in range(10):
+		for digit in range(length):
+			for reset in COM:
+				GPIO.output(reset, False)
+			GPIO.output(COM[digit + size], True)
+			num = int(number_str[digit])
+			for i in range(7):
+				GPIO.output(segPins[i], seqs[num][i])
+			time.sleep(0.02)
+
 try:
-		i= -1
+		number = 0
 		while True:
-		i++
-			for num in range(0, 4):
-				for reset in COM:
-					GPIO.output(reset, False) ## COM이 바뀔 때 마다 초기화
-				GPIO.output(COM[num], True) ## COM에 신호인가
-				for i in range(0, 7): 
-					GPIO.output(segPins[i], seqs[numList[num]][i]) ## 해당하는 숫자 표기
-				time.sleep(0.001)
+			display_number(number)
+			number += 1
+			if number > 9999:
+				print("Finish")
+			time.sleep(0.001)
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
