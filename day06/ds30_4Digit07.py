@@ -29,7 +29,7 @@ try:
       count += 1
       if count == 9999:
          count = 0
-      
+
       d1000 = count / 1000
       d100 = count % 1000 /100
       d10 = count % 100  /10
