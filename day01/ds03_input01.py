@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-swicth = 6
+swicth = 21
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(swicth, GPIO.IN)

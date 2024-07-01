@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>delete.png</file>
+    <file>alarm_icon.png</file>
+  </qresource>
+</RCC>

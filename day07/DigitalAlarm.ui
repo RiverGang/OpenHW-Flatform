@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>602</width>
-    <height>418</height>
+    <height>469</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,42 +18,23 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../images/alarm_icon.png</normaloff>../images/alarm_icon.png</iconset>
+    <normaloff>:/icon/alarm_icon.png</normaloff>:/icon/alarm_icon.png</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(240, 241, 255)</string>
+   <string notr="true">background-color: white</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="enabled">
     <bool>true</bool>
    </property>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>581</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Serif</family>
-     </font>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Serif'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'PibotoLt'; font-size:72pt; font-weight:600;&quot;&gt;Digital Alarm&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>290</y>
+      <y>280</y>
       <width>81</width>
       <height>71</height>
      </rect>
@@ -85,6 +66,9 @@ p, li { white-space: pre-wrap; }
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="editable">
       <bool>false</bool>
      </property>
@@ -109,7 +93,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>170</y>
+      <y>160</y>
       <width>161</width>
       <height>111</height>
      </rect>
@@ -118,6 +102,9 @@ p, li { white-space: pre-wrap; }
      <string>Time Set</string>
     </property>
     <widget class="QTimeEdit" name="timeEdit">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -137,13 +124,23 @@ p, li { white-space: pre-wrap; }
      <property name="displayFormat">
       <string>hh:mm</string>
      </property>
+     <property name="currentSectionIndex">
+      <number>0</number>
+     </property>
+     <property name="time">
+      <time>
+       <hour>0</hour>
+       <minute>0</minute>
+       <second>0</second>
+      </time>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>170</y>
+      <y>160</y>
       <width>301</width>
       <height>201</height>
      </rect>
@@ -175,7 +172,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>200</y>
+      <y>190</y>
       <width>111</width>
       <height>81</height>
      </rect>
@@ -189,10 +186,9 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(58, 134, 255);
+     <string notr="true">color:rgb(0, 170, 255);
 background-color: white;
-border: 2px solid rgb(58, 134, 255);
-border-radius: 5px;</string>
+border: 2px solid rgb(0, 170, 255);</string>
     </property>
     <property name="text">
      <string>save</string>
@@ -202,7 +198,7 @@ border-radius: 5px;</string>
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>290</y>
+      <y>280</y>
       <width>71</width>
       <height>81</height>
      </rect>
@@ -250,7 +246,7 @@ border-radius: 5px;</string>
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>290</y>
+      <y>280</y>
       <width>111</width>
       <height>81</height>
      </rect>
@@ -284,6 +280,145 @@ border-radius: 5px;</string>
      </item>
     </widget>
    </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>581</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>0</y>
+       <width>511</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="LblTime">
+        <property name="text">
+         <string>Time :</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="LblColor">
+        <property name="text">
+         <string>Color : </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="LblRepeat">
+        <property name="text">
+         <string>Repeat :</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="LblSound">
+        <property name="text">
+         <string>Sound :</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>31</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="LblTimeicon">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../images/alarm_icon.png</pixmap>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>542</x>
+       <y>0</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="BtnReset">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../images/delete.png</normaloff>../images/delete.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>561</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>72</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Digital Alarm</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -315,8 +450,25 @@ border-radius: 5px;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>BtnReset</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>BtnResetFnc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>575</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>577</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>BtnsaveFnc()</slot>
+  <slot>BtnResetFnc()</slot>
  </slots>
 </ui>
